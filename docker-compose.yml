@@ -1,0 +1,16 @@
+version: '3'
+services:
+  app:
+    env_file:
+      - .env
+    build:
+      context: ./
+      dockerfile: docker/Dockerfile
+    ports:
+      - 6001:6000
+    volumes:
+      - ..:/workspaces:cached
+    environment:
+      - PYTHONPATH=/workspaces/my-gradio-template
+    init: true
+    command: ["sleep", "infinity"]
