@@ -12,5 +12,6 @@ services:
       - ..:/workspaces:cached
     environment:
       - PYTHONPATH=/workspaces/my-gradio-template
+      - MPLBACKEND=Agg
     init: true
     command: ["sleep", "infinity"]
